@@ -1,0 +1,14 @@
+
+---Downloaded files---
+The import files for: Home 8 were successfully downloaded!
+Initial max execution time = 600
+Files info:
+Site URL = https://skytbilisi.ddev.site
+Data file = /var/www/html/wp-content/uploads/2025/11/demo-content-import-file_2025-11-25__22-45-28.xml
+Widget file = not defined!
+Customizer file = not defined!
+Redux files:
+not defined!
+
+---ocdi/after_import---
+

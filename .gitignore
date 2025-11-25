@@ -1,0 +1,42 @@
+# ------------------------------------------------------------------
+# DDEV Specific Files (from the ddev-generated list)
+# ------------------------------------------------------------------
+.ddev/db/
+.ddev/ssh/
+.ddev/web/
+.ddev/.global_dotfiles_marker
+.ddev/router_http_port
+.ddev/router_https_port
+
+# Generated files that should NOT be tracked in source control
+.ddev/.gitignore
+.ddev/config.local.y*ml
+.ddev/config.*.local.y*ml
+.ddev/db_snapshots
+.ddev/.dbimageBuild
+.ddev/.webimageBuild
+.ddev/traefik/config/
+.ddev/traefik/certs/
+.ddev/.importdb*
+.ddev/sequelpro.spf
+.ddev/mutagen/mutagen.yml
+.ddev/mutagen/.start-synced
+.ddev/commands/web-build/
+
+# ------------------------------------------------------------------
+# WordPress Specific Files (Crucial for Security & Size)
+# ------------------------------------------------------------------
+wp-config-ddev.php  # CONTAINS LOCAL DB CREDENTIALS
+wp-content/uploads/ # User uploads (too large for Git)
+wp-content/cache/
+wp-content/blogs.dir/
+wp-content/upgrade/
+
+
+# ------------------------------------------------------------------
+# IDE and OS Files
+# ------------------------------------------------------------------
+.idea/             # PhpStorm IDE files
+.DS_Store          # macOS files
+Thumbs.db          # Windows files
+/vendor/           # Composer packages (if used)
