@@ -8,13 +8,13 @@
 
 if ( getenv( 'IS_DDEV_PROJECT' ) == 'true' ) {
 	/** The name of the database for WordPress */
-	defined( 'DB_NAME' ) || define( 'DB_NAME', 'db' );
+	defined( 'DB_NAME' ) || define( 'DB_NAME', 'vhbswphgem' );
 
 	/** MySQL database username */
-	defined( 'DB_USER' ) || define( 'DB_USER', 'db' );
+	defined( 'DB_USER' ) || define( 'DB_USER', 'vhbswphgem' );
 
 	/** MySQL database password */
-	defined( 'DB_PASSWORD' ) || define( 'DB_PASSWORD', 'db' );
+	defined( 'DB_PASSWORD' ) || define( 'DB_PASSWORD', 'Q26F3hR88m' );
 
 	/** MySQL hostname */
 	defined( 'DB_HOST' ) || define( 'DB_HOST', 'ddev-skytbilisi-db' );
