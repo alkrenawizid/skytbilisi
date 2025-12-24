@@ -35,6 +35,12 @@ if ( getenv( 'IS_DDEV_PROJECT' ) !== 'true' ) {
 
     /** MySQL hostname on Cloudways - usually localhost */
     define( 'DB_HOST', 'localhost' );
+
+    // Redis Configuration for Cloudways
+    define( 'WP_REDIS_CONFIG', [
+        'host' => '127.0.0.1',
+        'port' => 6379,
+    ] );
 }
 
 /**
@@ -53,7 +59,15 @@ defined( 'ABSPATH' ) || define( 'ABSPATH', dirname( __FILE__ ) . '/' );
  */
 $ddev_settings = __DIR__ . '/wp-config-ddev.php';
 if ( ! defined( 'DB_USER' ) && getenv( 'IS_DDEV_PROJECT' ) == 'true' && is_readable( $ddev_settings ) ) {
-	require_once( $ddev_settings );
+    require_once( $ddev_settings );
+
+    // Redis Configuration for DDEV (Standard DDEV Redis service)
+    if (!defined('WP_REDIS_CONFIG')) {
+        define( 'WP_REDIS_CONFIG', [
+            'host' => 'redis',
+            'port' => 6379,
+        ] );
+    }
 }
 
 /** Include wp-settings.php */
