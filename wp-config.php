@@ -1,10 +1,6 @@
 <?php
 /**
- * #ddev-generated: Automatically generated WordPress settings file.
- * ddev manages this file and may delete or overwrite the file unless this comment is removed.
- * It is recommended that you leave this file alone.
- *
- * @package ddevapp
+ * The base configuration for WordPress
  */
 
 /** Database charset to use in creating database tables. */
@@ -24,8 +20,8 @@ define( 'LOGGED_IN_SALT', 'EvvckzaRdnuLwTAmAIxaSFRRfXWDWuxHdSnAZFGWzXdRDqAtbNHpf
 define( 'NONCE_SALT', 'fNFsqoAVpNZAqCoIEKkDuRzGmXMUsmtcrAGvGHmTdmYQPuvcfOEyQLREJrBTPETd' );
 
 /**
- * PRODUCTION SETTINGS (Cloudways)
- * This block runs when NOT on a DDEV environment.
+ * Cloudways Production Database Settings
+ * These settings will be used when NOT running on DDEV.
  */
 if ( getenv( 'IS_DDEV_PROJECT' ) !== 'true' ) {
     /** The name of the database for WordPress on Cloudways */
@@ -35,22 +31,26 @@ if ( getenv( 'IS_DDEV_PROJECT' ) !== 'true' ) {
     define( 'DB_USER', 'vhbswphgem' );
 
     /** MySQL database password on Cloudways */
-    define( 'DB_PASSWORD', 'vhbswphgem' );
+    define( 'DB_PASSWORD', 'Q26F3hR88m' );
 
     /** MySQL hostname on Cloudways - usually localhost */
     define( 'DB_HOST', 'localhost' );
 }
 
-/* Add any custom values between this line and the "stop editing" line. */
-
-
+/**
+ * WordPress Database Table prefix.
+ */
+$table_prefix = 'wp_';
 
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
 defined( 'ABSPATH' ) || define( 'ABSPATH', dirname( __FILE__ ) . '/' );
 
-// Include for settings managed by ddev.
+/**
+ * DDEV Local Settings
+ * This block loads local credentials from wp-config-ddev.php when on DDEV.
+ */
 $ddev_settings = __DIR__ . '/wp-config-ddev.php';
 if ( ! defined( 'DB_USER' ) && getenv( 'IS_DDEV_PROJECT' ) == 'true' && is_readable( $ddev_settings ) ) {
 	require_once( $ddev_settings );
