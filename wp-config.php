@@ -23,6 +23,24 @@ define( 'SECURE_AUTH_SALT', 'kHtwZSuWVqxZjsboSizxvZtPLawBIjRDeXQEbKffUvhHBhhFVOj
 define( 'LOGGED_IN_SALT', 'EvvckzaRdnuLwTAmAIxaSFRRfXWDWuxHdSnAZFGWzXdRDqAtbNHpfpTkynvHsNKW' );
 define( 'NONCE_SALT', 'fNFsqoAVpNZAqCoIEKkDuRzGmXMUsmtcrAGvGHmTdmYQPuvcfOEyQLREJrBTPETd' );
 
+/**
+ * PRODUCTION SETTINGS (Cloudways)
+ * This block runs when NOT on a DDEV environment.
+ */
+if ( getenv( 'IS_DDEV_PROJECT' ) !== 'true' ) {
+    /** The name of the database for WordPress on Cloudways */
+    define( 'DB_NAME', 'vhbswphgem' );
+
+    /** MySQL database username on Cloudways */
+    define( 'DB_USER', 'vhbswphgem' );
+
+    /** MySQL database password on Cloudways */
+    define( 'DB_PASSWORD', 'vhbswphgem' );
+
+    /** MySQL hostname on Cloudways - usually localhost */
+    define( 'DB_HOST', 'localhost' );
+}
+
 /* Add any custom values between this line and the "stop editing" line. */
 
 
