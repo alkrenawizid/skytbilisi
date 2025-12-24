@@ -38,9 +38,14 @@ if ( getenv( 'IS_DDEV_PROJECT' ) !== 'true' ) {
 
     // Redis Configuration for Cloudways
     define( 'WP_REDIS_CONFIG', [
-        'host' => '127.0.0.1',
-        'port' => 6379,
+        'host'     => '127.0.0.1',
+        'port'     => 6379,
+        'database' => 0,
+        'prefix'   => 'vhbswphgem',
     ] );
+
+    // Also set the salt to match the prefix for extra safety
+    define( 'WP_CACHE_KEY_SALT', 'vhbswphgem' );
 }
 
 /**
